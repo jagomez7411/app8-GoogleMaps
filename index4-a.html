@@ -5,6 +5,15 @@
 <title>Ubicacion en el mapa de google</title>
 </head>
 <body>
+<!-- Se determina la localizacion -->
+<div id='ubicacion'></div>
+<script type="text/javascript">
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+	} else {alert("¡Error! Este navegador no soporta la Geolocalización.");}
+		function refrescarUbicacion() {	
+			navigator.geolocation.watchPosition(mostrarUbicacion);}	
+</script>
 
 <!-- Se escribe un mapa con la localizacion anterior-->
 <div id="demo"></div>
